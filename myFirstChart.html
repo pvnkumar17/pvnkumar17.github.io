@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html ng-app="storeapp">
+<head>
+
+<script src="js/angular.min.js">
+</script>
+<!-- <script src="js/d3.v3.min.js" charset="utf-8"></script>   -->
+  <script src="js/Chart.js"></script>
+<script src="js/angular-chart.js"></script>
+  
+<script>
+
+var app=angular.module('storeapp', ['chart.js']);
+
+// using this and $scope
+
+// app.controller('StoreController', function ($scope){
+	
+
+// 	$scope.labels = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+//   $scope.series = ['Series A', 'Series B'];
+//   $scope.data = [
+//     [65, 59, 80, 81, 56, 55, 40],
+//     [28, 48, 40, 19, 86, 27, 90]
+//   ];
+//   $scope.salesdata = [];
+//   $scope.salesdata[0] = [];
+//   $scope.salesdata[0].length = 12;
+  
+  
+//    for (var i=0; i< 12; i++ ){
+// 	   $scope.salesdata[0][i] = i;
+//    }
+
+   
+// });
+
+app.controller("StoreController", function ($scope) {
+  $scope.Mlabels = ["Download Sales", "In-Store Sales", "Mail-Order Sales"];
+  $scope.Mdata = [300, 500, 100];
+});
+app.controller("pieController", function ($scope) {
+  $scope.pLabels = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+  $scope.pData = [300, 500, 100, 100, 100, 100, 100, 100, 100, 120, 190, 200];
+});
+
+   
+// filter by val, orderBy
+
+</script>
+<style>
+	body {
+		margin: 0;
+	}
+	.container-page {
+		max-width: 978px;
+		margin: 0 auto;
+	}
+	.left-chart {
+		width: 50%;
+		float: left;
+	}
+	.right-chart {
+		width: 50%;
+		float: left;
+	}
+</style>
+</head>
+
+<body>
+
+<!-- <canvas id="line" class="chart chart-line" data="salesdata"
+  labels="labels" legend="false" series="series"
+  >
+</canvas> -->
+<!-- <canvas id="doughnut" class="chart chart-doughnut" chart-data ="data" chart-labels="labels"></canvas> -->
+	<div class="container-page">
+		<div class="left-chart">
+			<div ng-controller="StoreController as storelocal"> 
+				<canvas id="doughnut" class="chart chart-doughnut"
+				  chart-data="Mdata" chart-labels="Mlabels" chart-colors="">
+				</canvas>
+			</div>
+		</div>
+		<div class="right-chart">
+			<div ng-controller="pieController"> 
+				<canvas id="pie" class="chart chart-pie"
+				  chart-data="pData" chart-labels="pLabels">
+				</canvas>
+			</div>
+		</div>
+	</div>
+
+	<div class="container-page">
+		<div class="left-chart">
+			<div ng-controller="StoreController as storelocal"> 
+				<canvas id="line" class="chart chart-line"
+				  chart-data="Mdata" chart-labels="Mlabels">
+				</canvas>
+			</div>
+		</div>
+		<div class="right-chart">
+			<div ng-controller="pieController"> 
+				<canvas id="bar" class="chart chart-bar"
+				  chart-data="pData" chart-series="series" chart-labels="pLabels">
+				</canvas>
+			</div>
+		</div>
+	</div>
+
+	<div class="container-page">
+		<div class="left-chart">
+			<div ng-controller="StoreController as storelocal"> 
+				<canvas id="horizontal-bar" class="chart chart-horizontal-bar"
+				  chart-data="Mdata" chart-labels="Mlabels">
+				</canvas>
+			</div>
+		</div>
+		<div class="right-chart">
+			<div ng-controller="pieController"> 
+				<canvas id="radar" class="chart chart-radar"
+				  chart-data="pData" chart-labels="pLabels">
+				</canvas>
+			</div>
+		</div>
+	</div>
+
+	<div class="container-page">
+		<div class="left-chart">
+			<div ng-controller="StoreController as storelocal"> 
+				<canvas id="polar-area" class="chart chart-polar-area"
+				  chart-data="Mdata" chart-labels="Mlabels">
+				</canvas>
+			</div>
+		</div>
+		<div class="right-chart">
+			<div ng-controller="pieController"> 
+				<canvas id="bubble" class="chart chart-bubble"
+				  chart-data="pData" chart-labels="pLabels">
+				</canvas>
+			</div>
+		</div>
+	</div>
+
+
+</body>
+</html>
