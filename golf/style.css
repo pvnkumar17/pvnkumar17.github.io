@@ -1,0 +1,109 @@
+* {
+	  -moz-box-sizing: border-box;
+	  -webkit-box-sizing: border-box;
+	  box-sizing: border-box; 
+}
+
+.clearfix:before {
+  content: "";
+  display: table; 
+}
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both; 
+}
+
+body {
+	margin: 0;	
+	font-family: 'Noto Sans', sans-serif;
+	background: #fafafa;
+	color: #fff;
+}
+.header{
+	 text-align: center;
+}
+
+.header-page {
+	margin: 60px 0 52px;
+}
+
+.circle {
+	display: inline-block;
+	width: 112px;
+	height: 112px;
+	border-radius: 50%;
+	background: #d7d7d7;
+}
+
+.title-login{
+	font-size: 16px;
+	font-weight: 700;
+	line-height: 1;
+	text-transform: uppercase;
+	color: #1b10ac;
+	text-align: center;
+}
+
+.border {
+	display: inline-block;
+	height: 6px;
+	width: 83px;
+	margin: 8px 0 12px;
+	border-radius: 5px;
+	background: #1b10ac;
+}
+
+.container-form {
+	max-width: 978px;
+	margin: 0 auto;
+}
+
+.container-input-fields{
+	background: #fff;
+	width: 85%;
+	margin: 0 auto;
+	padding: 24px 0 40px;
+	border-radius: 10px;
+	text-align: center;
+    font-size: 18px;
+}
+.ust{
+	display: block;
+	font-weight: 400;
+	color: #d7d7d7;
+	font-size: 14px;
+	width: 88%;
+	text-align: center;
+	padding: 17px;
+	border: 2px solid #ebebeb;
+	text-transform: capitalize;
+	margin: 14px auto;
+}
+
+a.fgr-pwsd{
+	display: block;
+	text-align: right;
+	text-transform: lowercase;
+	text-decoration: none;
+	color: #555555;
+	font-size: 14px;
+	line-height: 1;
+	margin: 25px 9% 0 0;
+
+}
+.login{
+	width: 58%;
+	font-size: 16px;
+	font-weight: 700;
+	color: #fff;
+	text-align: center;
+	border: none;
+	padding: 14px 0 17px;
+	display: block;
+	margin: 29px auto;
+	background: -moz-linear-gradient(-45deg,  #1a0fac 0%, #330fac 57%, #6110ac 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(-45deg,  #1a0fac 0%,#330fac 57%,#6110ac 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(135deg,  #1a0fac 0%,#330fac 57%,#6110ac 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1a0fac', endColorstr='#6110ac',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
