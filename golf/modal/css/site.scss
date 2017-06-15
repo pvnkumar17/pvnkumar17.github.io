@@ -1,0 +1,340 @@
+/* Vendor Dependencies */
+@import "compass";
+@import "singularitygs";
+@import "import/vendor/normalize";
+
+// apply a natural box layout model to all elements
+* {
+	@include box-sizing(border-box);
+}
+
+//   ~ SCSS mixins and variables ~
+
+$mobile-first : true;
+$mobile: 750px;
+$tab : 1000px;
+
+// ~ Below here is Mobile first SCSS ~
+
+html {
+	font-size: 62.5%;
+}
+
+
+body {
+	font-size: 16px;
+	color: #f00;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+	color: #4abd92;
+	&:visited {
+		color: #515151;
+	}
+	&:hover, &:focus {
+		color: #00ff99;
+	}
+	&:active, &.current {
+		color: #757575;
+		text-decoration: none;
+	}
+}
+
+header {
+	@include breakpoint(min-width $mobile) {
+		@include clearfix;
+		background: #4abd92;
+		min-height: 250px;
+	}
+	@include breakpoint(min-width $tab) {		
+		min-height: 200px;
+	}
+}
+
+section {
+	@include breakpoint(min-width $mobile) {
+		width: 80%;
+		max-width: 1314px;
+		margin: 0 auto;		
+	}
+}
+
+.container-columns {
+	@include clearfix;
+}
+
+.column-left {
+	min-height: 210px;
+	width: 100%;
+	background: url(../images/bg-left.jpg) center top no-repeat;
+	background-size: 100% 100%;
+	position: relative;
+	h1 {
+		position: absolute;
+		top: 60px;
+		right: 0;
+		width: 80%;
+		max-width: 285px;
+		font-size: 15px; 
+		a {
+			background: #fff;
+			display: block;
+			padding: 20px;
+			border-bottom: 5px solid #0165a7;
+			color: #0165a7;
+			text-decoration: none;
+		}
+	}
+	@include breakpoint(min-width $mobile) {
+		min-height: 450px;
+		width: 40%;
+		float: left;
+		h1 {	
+			top: 80%;
+			width: 90%;
+			right: auto;
+			left: 0;
+			max-width: inherit;
+			a {
+				border-bottom: 10px solid #0165a7;
+			}
+		}
+	}
+	@include breakpoint(min-width $tab) {
+		min-height: 512px;
+		margin-top: -100px;
+		h1 {	
+			display: table;		
+			top: 50px;
+			left: auto;
+			right: -42%;
+			width: 90%;
+			font-size: 20px;
+			max-width: inherit;
+			a {
+				border-bottom: 20px solid #0165a7;
+			}
+		}
+	}
+	@include breakpoint(min-width 1100px) {
+		min-height: 570px;
+	}
+	@include breakpoint(min-width 1150px) {
+		h1 {
+			font-size: 25px;
+		}
+	}
+	@include breakpoint(min-width 1300px) {
+		min-height: 625px;
+		h1 {
+			font-size: 30px;
+		}
+	}
+}
+
+.column-right {
+	width: 80%;
+	margin: 0 auto;
+	h3 {
+		margin: 0;
+		font-size: 15px;
+		font-weight: 400;
+		display: inline-block;
+		width: 67%;
+		vertical-align: middle;
+		padding-right: 20px;
+	}
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		li {
+			color: #333;
+			padding: 25px 0;
+			border-bottom: 1px solid #333;
+			&:nth-of-type(3) {
+				border-bottom: none;
+			}
+			img {
+				display: inline-block;
+				vertical-align: middle;
+				width: 30%;
+				max-width: 30%;
+				margin: 0;
+			}
+		}
+	}	
+	@include breakpoint(min-width 500px) {
+		h3 {
+			font-size: 18px;
+		}
+	}
+	@include breakpoint(min-width $mobile) {
+		padding: 0 0 0 25px;
+		width: 60%;
+		float: right;
+		h3 {
+			font-size: 16px;
+		}		
+	}	
+	@include breakpoint(min-width $tab) {		
+		padding: 160px 0 0 40px;
+		h3 {
+			width: 100%;
+			padding-right: 0;
+			font-size: 18px;
+			padding-bottom: 20px;
+		}
+		ul {
+			li {
+				float: left;
+				width: 28%;
+				border: none;
+				padding: 0;
+				margin-right: 8%;
+				color: #333;
+				img {
+					display: block;
+					width: auto;
+					max-width: 100%;
+					margin: 0 auto;
+				}
+				&:nth-of-type(3) {
+					margin-right: 0;
+				}
+			}
+		}
+	}
+	@include breakpoint(min-width 1100px) {
+		h3 {
+			font-size: 22px;
+		}
+	}
+	@include breakpoint(min-width 1300px) {
+		h3 {
+			font-size: 26px;
+		}
+	}
+}
+
+.modal-wrap {
+	visibility: hidden;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.8);
+	position: fixed;
+	top: 0;
+	left: 0;
+	overflow-y: scroll;
+	z-index: 9;
+	transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+	opacity: 0;
+}
+
+.modal {
+	width: 100%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	max-width: 260px;
+	margin-top: -251px;
+	margin-left: -130px;
+	background: #fff;
+	font-size: 16px;
+	color: #757575;	
+	transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+	a#close {
+		display: block;
+		width: 30px;
+		height: 30px;
+		position: absolute;
+		right: 0;
+		top: 10px;
+		&:after, &:before {
+			content: "";
+			position: absolute;
+			width: 60%;
+			height: 2px;
+			background: #fff;
+			left:5px;
+			top:10px;
+		}
+		&:after {
+			transform: rotate(45deg);
+			-webkit-transform: rotate(45deg);
+		}
+		&:before {
+			transform: rotate(-45deg);
+			-webkit-transform: rotate(-45deg);
+		}
+	}
+	a {
+		color: #333;
+		&:hover{
+			color: #757575;
+		}
+	}
+	.title {
+		background: #0165a7;
+		color: #fff;
+		font-size: 16px;
+		padding: 40px 20% 20px 20px;
+		margin:0;
+	}
+	.content  {
+		@include clearfix;
+		padding: 10px 20px 20px;
+		a {
+			float: right;
+			display: block;
+			font-weight: 700;
+			margin-top: 16px;
+			text-decoration: none;
+		}
+	}
+	@include breakpoint(min-width 550px) {
+		max-width: 500px;
+		margin-top: -160px;
+		margin-left: -250px;
+		.title {
+			padding-top: 20px;
+			font-size: 18px;
+		}
+	}
+	@include breakpoint(min-width 600px) {
+		max-width: 450px;
+		margin-top: -172px;
+		margin-left: -225px;
+	}
+	@include breakpoint(min-width $mobile) {
+		max-width: 550px;
+		margin-top: -212px;
+		margin-left: -275px;
+		font-size: 18px;		
+		a#close {
+			width: 40px;
+			height: 40px;
+			right: 30px;
+			top: 44px;
+			&:after, &:before {
+				width: 100%;
+				top:15px;
+				left: 0;
+			}
+		}
+		.title {
+			font-size: 25px;
+			padding: 40px 20% 40px 20px;
+		}
+	}
+	@include breakpoint(min-width $tab) {
+		font-size: 20px;
+		margin-top: -232px;
+		.title {
+			font-size: 30px;
+		}
+	}
+}
