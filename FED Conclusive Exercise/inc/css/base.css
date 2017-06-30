@@ -1,0 +1,228 @@
+*{
+	box-sizing:border-box;
+}
+body{
+	background-color:#e2e2e2;
+	padding-top: 50px;
+	color: #000;
+}
+header{
+	width:100%;
+	position:fixed;
+	height:50px;
+	background-color:#ccc;
+	overflow:hidden;
+	padding: 10px;
+	z-index:2;
+	box-sizing:border-box;
+	top: 0;
+}
+header nav {
+	float: right;
+}
+header nav li {
+	display: inline-block;
+	margin-left: 5px;
+	padding: 5px 10px;
+	font-size: 20px;
+	background: #e2e2e2;
+}
+header .logo {
+	float: left;
+	font-size: 32px;
+	text-transform: uppercase;
+}
+.page-content{
+}
+
+.page-content .main-carousel{
+	width:100vw;
+	height:400px;
+	overflow:hidden;
+	position:relative;
+	z-index:1;
+}
+
+.page-content .main-carousel .carousel-next,
+.page-content .main-carousel .carousel-prev{
+	position:absolute;
+	top:50%;
+	padding:20px;
+	font-size: 16px;
+	z-index: 9;
+	font-weight: bold;
+	background-color:rgba(200,200,200,1);
+	cursor:pointer;
+	margin-top:-25px;
+}
+
+.page-content .main-carousel .carousel-next{
+	right:0;
+}
+
+.page-content .main-carousel .carousel-prev{
+	left:0;
+}
+
+.page-content .main-carousel .carousel-cells{
+	/*width:99999px;*/
+	height:100%;
+	position: relative;
+}
+
+.page-content .main-carousel .carousel-cells article{
+	width:100%;
+	height:100%;
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	background: url(../img/slide-background.jpg);
+}
+.page-content .main-carousel .carousel-cells article.animated{	
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+	animation-delay: 0.1s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+}
+
+.main-carousel .carousel-cells article .slide-text {
+	display: table;
+	margin: 0 auto;
+	opacity: 0;
+	top: 50%;
+	position: relative;
+	margin-top: -30px;
+	font-size: 16px;
+	text-align: center;
+}
+.main-carousel .carousel-cells article .slide-text h1{
+	font-size: 40px;
+}
+
+.page-content .main-carousel .carousel-cells article {
+
+}
+
+@-webkit-keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+.page-content .main-carousel .carousel-cells article.fadeInRight {
+  -webkit-animation-name: fadeInRight;
+  animation-name: fadeInRight;
+  z-index: 2;
+}
+@-webkit-keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+.page-content .main-carousel .carousel-cells article.fadeInLeft {
+  -webkit-animation-name: fadeInLeft;
+  animation-name: fadeInLeft;
+  z-index: 2;
+}
+.page-content .main-carousel .carousel-cells article.animated .slide-text{
+  opacity: 1;
+}
+
+.column-content {
+	max-width: 100%;
+	padding: 30px;
+}
+.column-content h1{
+	font-size: 30px;
+}
+.column-content h3{
+	padding: 20px 0;
+	font-size: 22px;
+}
+.column-content ul{
+	list-style: none;
+}
+.column-content .three-columns{
+	-webkit-column-count: 4;
+    -moz-column-count: 4; 
+    column-count: 4;
+}
+.column-content .three-columns aside{
+	-webkit-column-break-inside: avoid;
+	page-break-inside: avoid;
+   	break-inside: avoid;
+}
+
+@media (max-width: 767px) {
+	header .logo {
+		font-size: 25px;
+	}
+	header nav li {
+		font-size: 16px;
+		padding: 5px 6px;
+		margin-left: 3px;
+	}
+	.column-content {
+		padding: 20px;
+		font-size: 15px;
+	}
+	.column-content h1{
+		font-size: 25px;
+	}
+	.column-content h3{
+		padding: 20px 0;
+		font-size: 18px;
+	}
+	.column-content .three-columns{
+		-webkit-column-count: 3;
+	    -moz-column-count: 3; 
+	    column-count: 3;
+	}
+}
