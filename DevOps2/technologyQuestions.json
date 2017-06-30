@@ -1,0 +1,37 @@
+{
+	"cat1": {
+		"questions": [{
+			"ques": "Pick the odd man out. Which of the following products not supported by Legal DevOps team?", 
+			"answers":	["eDiscoveryPoint", "Findlaw", "Eikon", "Proview"],
+			"ans": "Eikon"
+		},{
+			"ques": "Which Platform Search DevOps project is also built for the mobile platform?", 
+			"answers":	["Novus", "Easel", "Infratools", "Prism"],
+			"ans": "Novus"
+		},{
+			"ques": "Which of the following projects does the Platform Search team doesn't provide support for?", 
+			"answers":	["Novus", "Easel", "ECP", "Elastic Search"],
+			"ans": "ECP"
+		},{
+			"ques": "What are the primary objectives of DevOps? ", 
+			"answers":	["Faster time to Market", "Reducing Risk", "Increased agility", "All the above"],
+			"ans": "All the above"
+		},{
+			"ques": "TR's strategic choice for data center and client site deployment management?", 
+			"answers":	["CDA", "CTA", "OVO", "GMI"],
+			"ans": "CDA"
+		},{
+			"ques": "Who are the first customers of CDA? ", 
+			"answers":	["Eikon/Elektron", "FindLaw", "QAD", "TRTA OneSource"],
+			"ans": "Eikon/Elektron"
+		},{
+			"ques": "Ansible is written in ?", 
+			"answers":	["Python and powershell", "Ruby", "Swift", "Perl"],
+			"ans": "Python and powershell"
+		},{
+			"ques": "--------- fundamentally accelerates the access to compute resources to facilitate faster software development and improved application scalability?", 
+			"answers":	["VMware", "VirtualBox", "Microsoft Azure", "Cobbler"],
+			"ans": "Microsoft Azure"
+		}]
+	}
+}

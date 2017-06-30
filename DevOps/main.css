@@ -1,0 +1,85 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	font-family: arial;
+}
+
+
+.container-page {
+	max-width: 1200px;
+	margin: 0 auto;
+}
+#button {
+	padding: 20px;
+	font-size: 20px;
+	display: table;
+	margin: 40px auto;
+	color: #fff;
+    background-color: #5bc0de;
+    border-color: #46b8da;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+
+#ques-container {
+	background: #eee;
+	padding: 70px 40px;
+	overflow: hidden;
+}
+
+#ques {
+	font-size: 30px;
+	margin: 0;
+	padding-bottom: 30px;
+}
+
+#options ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+#options ul li{
+	width: 45%;
+	float: left;
+	color: #333;
+	padding: 15px 20px;
+	background: #fff;
+	border: 1px solid #333;
+	margin: 15px;
+	cursor: pointer;
+	transition: 0.3s;
+}
+
+#options ul li:hover{
+	background: #eee;
+	opacity: 0.7;
+}
+
+#options ul li.red{
+	background: #f73d23;
+	color: #fff;
+}
+
+#options ul li.green{
+	background: #5eac1a;
+	color: #fff;
+}
+
+#message {
+	text-align: center;
+	padding: 24pt 0 10px;
+	font-size: 24pt;
+}
