@@ -3,6 +3,7 @@
 <head>
 	<title>Questions | TR DevOps</title>
 	<link rel="stylesheet" href="main.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 </head>
 <body>
 	<div class="container-page">
@@ -13,6 +14,17 @@
 		</div>
 		<div id="message"></div>
 	</div>
+	<script>
+		$.ajax({
+		    url: 'https://rio.quintype.io/api/v1/stories',
+		    dataType: 'JSONP',
+		    jsonpCallback: 'callback',
+		    type: 'GET',
+		    success: function (data) {
+			console.log(data);
+		    }
+		});
+	</script>
 	<script src="app.js"></script>
 </body>
 </html>
