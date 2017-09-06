@@ -109,6 +109,9 @@ a.brand {
 	.container-page {
 		padding: 0 10px;
 	}
+	footer .container-page {
+		padding: 25px 10px;
+	}
 	a.brand {
 		font-size: 22px;
 	}
